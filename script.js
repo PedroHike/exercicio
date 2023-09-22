@@ -8,15 +8,27 @@ const btnVoltar = btn[0]
 
 let i = 0
 
+var valorDeTranslate = 0
+
 btnAvancar.addEventListener('click', ()=>{
-    if (i<4){
+    if (i<3){
         i++
-    console.log(i);
+        valorDeTranslate = -25 * i;
+        slide.style.transform="translateX("+valorDeTranslate+"%)";
+        btnVoltar.classList.remove('desativado')
+    
     }else{
-        console.log('o valor de '+i+' chegou no limite');
+        btnAvancar.classList.add('desativado')
     }
 })
 
 btnVoltar.addEventListener('click', ()=>{
-    console.log('voce clicou em Voltar');
+    if (i>0){
+        valorDeTranslate+=25
+        slide.style.transform="translateX("+valorDeTranslate+"%)";
+        i--;
+        btnAvancar.classList.remove('desativado')
+    }else{
+        btnVoltar.classList.add('desativado')
+    }
 })
