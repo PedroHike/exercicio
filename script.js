@@ -16,9 +16,9 @@ btnAvancar.addEventListener('click', ()=>{
         valorDeTranslate = -25 * i;
         slide.style.transform="translateX("+valorDeTranslate+"%)";
         btnVoltar.classList.remove('desativado')
-    
-    }else{
-        btnAvancar.classList.add('desativado')
+        if(i==3){
+            btnAvancar.classList.add('desativado')
+        }
     }
 })
 
@@ -28,7 +28,8 @@ btnVoltar.addEventListener('click', ()=>{
         slide.style.transform="translateX("+valorDeTranslate+"%)";
         i--;
         btnAvancar.classList.remove('desativado')
-    }else{
-        btnVoltar.classList.add('desativado')
+        if (i==0) {
+            btnVoltar.classList.add('desativado')
+        }
     }
 })
